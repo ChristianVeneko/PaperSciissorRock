@@ -11,25 +11,29 @@ function cpuChoice() {
 
 function showResult(cpuChoice, result) {
   resultDiv.innerHTML = "";
-  
+
   const resultText = document.createElement("h1");
   const newText = document.createTextNode(result);
   resultText.appendChild(newText);
   resultDiv.appendChild(resultText);
 
-  const cpuChoiceImg = document.createElement('img');
-  
-  cpuChoiceImg.classList.add('icon'); 
+  const cpuChoiceImg = document.createElement("img");
 
-  let images = ["./images/Paper.jpeg", "./images/Rock.jpeg", './images/Scissor.jpeg']
-  if(cpuChoice == 'rock'){
+  cpuChoiceImg.classList.add("icon");
+
+  let images = [
+    "./images/Paper.jpeg",
+    "./images/Rock.jpeg",
+    "./images/Scissor.jpeg",
+  ];
+  if (cpuChoice == "rock") {
     cpuChoiceImg.src = images[1];
-  }else if(cpuChoice == 'paper'){
-    cpuChoiceImg.src = images[0]
-  }else{
-    cpuChoiceImg.src = images[2]
+  } else if (cpuChoice == "paper") {
+    cpuChoiceImg.src = images[0];
+  } else {
+    cpuChoiceImg.src = images[2];
   }
-  
+
   resultDiv.appendChild(cpuChoiceImg);
 }
 
@@ -37,7 +41,6 @@ function game(choice) {
   let result = "";
   const cpu = cpuChoice();
   const resultText = choice + cpu;
-  console.log(resultText);
 
   switch (resultText) {
     case "rockscissors":
